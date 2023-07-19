@@ -18,7 +18,7 @@
 		}
 
 		&.left,
-		&.right {
+		&.right{
 			max-width: 40%;
 
 			img {
@@ -31,6 +31,7 @@
 			margin: 0 2rem 2rem 0;
 			top: 0.75rem;
 		}
+
 
 		&.right {
 			float: right;
@@ -56,6 +57,7 @@
 			display: block;
 			margin: (_size(element-margin) * 2) 0;
 			width: 100%;
+
 
 			&:first-child {
 				margin-top: 0;
