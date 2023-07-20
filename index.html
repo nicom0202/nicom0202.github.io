@@ -11,6 +11,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			@media screen and (max-width: 768px) {
+			  .bio-text .image.left {
+				float: none;
+			  }
+		
+			  .bio-text .image.right {
+				float: none;
+			  }
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -52,7 +63,7 @@
 						<div class="bio-container">
 						<div class="bio-text">
 							<h2>Biography</h2>
-							<p><span class="image right">
+							<p><span class="image left">
 								<img src="images/me.png" alt="A picture of my face."
 									 style="background-color: #b1cef6; border-radius: 50%; width: 300px; height: 300px; transition: all 0.3s ease;" 
 									 onmouseover="this.style.width = '310px'; this.style.height = '310px';" 
@@ -114,6 +125,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				$(document).ready(function () {
+				  function updateImageClass() {
+					const bioImage = $(".bio-text .image");
+			  
+					if (window.innerWidth <= 768) {
+					  // For mobile, add 'right' class and remove 'left' class
+					  bioImage.addClass("right").removeClass("left");
+					} else {
+					  // For desktop, add 'left' class and remove 'right' class
+					  bioImage.addClass("left").removeClass("right");
+					}
+				  }
+			  
+				  // Call the function on page load
+				  updateImageClass();
+			  
+				  // Call the function when the window is resized
+				  $(window).resize(updateImageClass);
+				});
+			  </script>
 
 	</body>
 </html>
